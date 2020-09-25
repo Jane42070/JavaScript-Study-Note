@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>animate动画</title>
+		<script src="js/jquery-3.5.1.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				var $div = $('.box')
+				var $div2 = $('.box2')
+				$div.click(function () {
+
+					// $div.animate({'width': 200}).animate({'height': 400})
+					$div.animate({'width': 200}, 2000, function () {
+						$div.animate({'height': 400}, 1000, function () {
+							$div.animate({'opacity': '0'}, 500)
+						})
+					})
+				})
+				$div2.click(function () {
+					$div2.stop().animate({'width': '+=100'}, 500)
+				})
+			})
+		</script>
+		<style type="text/css" media="screen">
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: gold;
+			}
+
+			.box2 {
+				width: 100px;
+				height: 100px;
+				background-color: gold;
+				margin-top: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box"></div>
+		<div class="box2"></div>
+	</body>
+
+</html>

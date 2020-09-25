@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>已有节点操作</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			var $h1 = $('#title01')
+			var $p1 = $('#p1')
+			var $sp1 = $('#span01')
+
+			// $h1.insertAfter($p1)
+			// $p1.insertBefore($h1)
+			// $p1.after($h1)
+			$h1.before($p1)
+
+			// $p1.append($sp1)
+			$sp1.appendTo($p1)
+			// 删除 id = span01 的元素
+			$sp1.remove()
+		})
+	</script>
+	<style type="text/css" media="screen">
+		body {
+			background-color: #333;
+			color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 id="title01">这是一个h1元素</h1>
+	<p id="p1">这是一个p元素</p>
+
+	<span id="span01">这是一个 span 元素</span>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>选择器过滤</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			/*
+			// 只用一次就不存，用多次就存
+			var $div = $('div')
+			$div.css({'background-color': 'gold'})
+			*/
+
+			$('div').css({'background-color': 'gold'})
+
+			$('div').has('p').css({'font-size': '30px'})
+
+			$('div').eq(5).css({'font-weight': 'bold'})
+
+			$('div').filter('.p').css({'font-size': '50px'})
+
+			$('div').not('.false').css({'background-color': 'purple'})
+
+			$('div').find('.findme').css({'color': 'gray'})
+		})
+	</script>
+</head>
+
+<body>
+	<div class="p">1</div>
+	<div>
+		<p class="findme">2</p>
+	</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div class="false">7</div>
+	<div class="false">8</div>
+</body>
+
+</html>

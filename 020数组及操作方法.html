@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>数组及操作方法</title>
+	<script type="text/javascript" id="">
+		// 通过类实例化来创建数组
+		var aList01 = new Array(1, 2, 3)
+		// 获取数组长度
+		alert(aList01.length)
+		alert(aList01[1])
+
+		// 用 '-' 分割
+		alert(aList01.join('-'))
+
+		// 通过直接量的方式创建数组
+		var aList02 = [1, 2, 3]
+
+		// push() 和 pop() 从数组最后增加成员或删除成员
+		// 通过 push 方法在数组的后面增加成员
+		aList02.push('b')
+		alert(aList02)
+
+		// pop 方法默认移除最后一个成员
+		aList02.pop()
+		alert(aList02)
+
+		// unshift() 和 shift() 从数组前面增加成员或删除成员
+		aList02.unshift('unshift')
+		alert(aList02)
+		aList02.shift()
+		alert(aList02)
+		// 翻转数组
+		alert(aList02.reverse())
+		// indexOf() 返回数组中元素第一次出现的索引值
+		alert(aList02.indexOf(1))
+		// splice() 在数组中增加或删除成员
+		aList02.splice(0, 1, 'd', 'e', 'l', 'e', 't', 'e') // 从第0个元素开始，删除1个元素，加入'd', 'e', 'l', 'e', 't', 'e'
+		alert(aList02)
+	</script>
+</head>
+
+<body>
+	body
+</body>
+
+</html>

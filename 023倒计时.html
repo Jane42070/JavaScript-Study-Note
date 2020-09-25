@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>定时器</title>
+	<script type="text/javascript">
+		window.onload = function () {
+			var oDiv1 = document.getElementById('div1')
+			var oDiv2 = document.getElementById('div2')
+
+			timego = function () {
+				// 实际开发中需要读取后台服务器传的时间 ( 可以通过 ajax  来读取 )
+				var sNow = new Date()
+
+				// 2020 年 6 月 1 日 0:00
+				var sFuture = new Date(2020, 4, 31, 24, 0, 0)
+
+				// 毫秒
+				var sLeft = parseInt((sFuture - sNow) / 1000)
+
+				// 计算含有的天，时，分，秒
+				var lDay = parseInt(sLeft / (60 * 60 * 24))
+
+				var lHour = parseInt(sLeft / (60 * 60) - lDay * 24)
+
+				var lMinute = parseInt(sLeft / 60 - lDay * 24 * 60 - lHour * 60)
+				var lSecond = parseInt(sLeft - lDay * 24 * 60 * 60 - lHour * 60 * 60 - lMinute * 60)
+
+				oDiv2.innerHTML = lDay + '天' + lHour + '小时' + lMinute + '分' + lSecond + '秒'
+			}
+
+			oDiv1.innerHTML = '距离儿童节还有'
+
+			timego()
+
+			timer = setInterval(timego, 1000)
+		}
+	</script>
+	<style type="text/css" media="screen">
+		body {
+			background-color: black;
+			color: gray;
+		}
+
+		.div1 {
+			width: 140px;
+			height: 100%;
+			font-size: 20px;
+			margin: 20px auto 0;
+		}
+
+		.div2 {
+			width: 180px;
+			height: 100%;
+			font-size: 20px;
+			display: block;
+			margin: 20px auto 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="div1" class="div1"></div>
+	<div id="div2" class="div2"></div>
+	<div id="div3" class="div3"></div>
+</body>
+
+</html>

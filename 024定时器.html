@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>定时器</title>
+	<script type="text/javascript">
+		window.onload = function () {
+			var oDiv2 = document.getElementById('div2')
+			var oDiv4 = document.getElementById('div4')
+			var iLeft = 0
+			var iSpeed = 1
+			function myalert() {
+				alert('hello world')
+			}
+
+			// 只执行一次的定时器
+			// setTimeout(myalert, 2000)
+
+			/*
+				定时器：
+				setTimeout 只执行一次的定时器
+				clearTimeout 关闭只执行一次的定时器
+	
+				setInterval 执行多次的定时器
+				clearInterval 关闭执行多次的定时器
+			*/
+
+			var timer = setInterval(myalert, 1000)
+
+			var timer2 = setInterval(function () {
+				alert('hello, world')
+			}, 1000)
+			clearInterval(timer2)
+			clearInterval(timer)
+
+			function moving() {
+				iLeft += iSpeed
+				oDiv2.style.left = iLeft + 'px'
+				if (iLeft >= 1000) {
+					// clearInterval(move)
+					iSpeed = -1
+					oDiv4.style.display = 'block'
+				}
+				else if (iLeft == 0) {
+					iSpeed = 1
+				}
+			}
+			var move = setInterval(moving, 10)
+		}
+	</script>
+	<style type="text/css" media="screen">
+		body {
+			background-color: #f0f0f0;
+			z-index: 1;
+		}
+
+		.div2 {
+			width: 200px;
+			height: 200px;
+			background-color: gold;
+			position: relative;
+			top: 100px;
+			left: 0px;
+		}
+
+		.div3 {
+			width: 400px;
+			height: 300px;
+			border-radius: 10px;
+			background-color: #fff;
+			box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+			position: relative;
+			margin: 200px auto;
+			z-index: 999;
+		}
+
+		.div4 {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 10;
+			position: fixed;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="div1" class="div1"></div>
+	<div id="div2" class="div2"></div>
+	<div id="div4" class="div4">
+		<div id="div3" class="div3"></div>
+	</div>
+</body>
+
+</html>

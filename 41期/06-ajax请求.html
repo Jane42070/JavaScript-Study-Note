@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>06 ajax请求</title>
+		<script src="js/jquery-3.5.1.js"></script>
+		<script charset="utf-8">
+			$(function () {
+				$('.person').slideDown(1000)
+				// 向 web 服务器发送 ajax 请求，本质上是一个 http 协议的请求
+				/*
+				$.ajax({
+					// 请求的资源地址，不指定 ip 地址和端口号表示请求的是自己的服务器资源数据
+					url: "data.json",
+					// 请求方式：GET, POST
+					type: "GET",
+					// 指定对服务器数据的解析格式
+					dataType: "JSON",
+					// data：表示发送给 web 服务器的参数
+					// 请求成功执行的函数
+					success: function (data) {
+						console.log(data)
+						// var data = JSON.parse(data)
+						// alert(data.name)
+						$('#name').text(data.name)
+						$('#age').text(data.age)
+						$('#address').text(data.person_info.address)
+						$('#phone').text(data.person_info.phone)
+					},
+					// 请求失败执行的函数
+					error: function () {
+						console.log('错误！')
+						$('#error').fadeIn()
+					},
+					// 是否使用异步，默认不指定表示是异步请求
+					async: true
+				})
+				*/
+				// 发送 get 方式的 ajax 请求的简写方式
+				// 1. 请求的地址
+				// 2. 请求传给 web 服务器的参数
+				// 3. 请求成功返回的回调函数
+				// 4. 返回数据的解析方式
+				$.get("data.json", {"name": "ls"}, function (data) {
+					$('#name').text(data.name)
+					$('#age').text(data.age)
+					$('#address').text(data.person_info.address)
+					$('#phone').text(data.person_info.phone)
+				}, "JSON").fail(function () {
+					alert("网络异常，请求失败")
+					$('#error').fadeIn()
+				})
+			})
+		</script>
+		<style type="text/css" media="screen">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			.person {
+				height: 100px;
+				width: 400px;
+				border: 2px solid #000;
+				border-radius: 3px;
+				padding: 10px;
+				list-style: none;
+				margin: 50px auto 0;
+				box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.4);
+				display: none;
+			}
+
+			#error {
+				display: none;
+				font-size: 18px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul class="person">
+			<li id="name"></li>
+			<li id="age"></li>
+			<li id="address"></li>
+			<li id="phone"></li>
+			<li id="error">Ops, something went wrong, please contact server admin to slove the problem</li>
+		</ul>
+	</body>
+
+</html>

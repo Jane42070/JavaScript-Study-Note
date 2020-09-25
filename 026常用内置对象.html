@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function () {
+			var oDiv = document.getElementById('oBtn')
+			oDiv.onclick = function () {
+				// window.location.href = "https://baidu.com/"
+				var sData = window.location.search
+				document.getElementsByTagName('body')[0].style.backgroundColor = sData.split('?')[1]
+				alert(sData.split('?')[1])
+			}
+		}
+	</script>
+	<style type="text/css" media="screen">
+		.oBtn {
+			width: 40px;
+			height: 30px;
+			border-radius: 5px;
+			background-color: gold;
+			line-height: 30px;
+			text-align: center;
+			transition: all 500ms ease;
+		}
+
+		.oBtn:hover {
+			background-color: gray;
+			color: gold;
+		}
+
+		.oBtn:active {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="oBtn" class="oBtn">点击</div>
+</body>
+
+</html>

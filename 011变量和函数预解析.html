@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>变量和函数预解析</title>
+	<script type="text/javascript">
+		// 预解析会把变量的声明提前
+		alert(iNum)    // 弹出 undefined
+
+		// 预解析会让函数的声明和定义提前
+		myalert()
+
+		// alert(iNum02) 使用一个未声明的变量会出错
+
+		var iNum = 12
+
+		function myalert() {
+			alert('hello world')
+		}
+	</script>
+</head>
+
+<body>
+	<div id="div">这是一个 div 标签</div>
+</body>
+
+</html>

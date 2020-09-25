@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>事件冒泡</title>
+		<script src="js/jquery-3.5.1.js"></script>
+		<!-- 事件的传递 -->
+		<script charset="utf-8">
+			$(function () {
+				var $btn = $('#btn1')
+				var $div = $('div')
+
+				$btn.click(function () {
+					alert('哈哈，这是一个按钮')
+					// 取消事件冒泡，不让事件像父级传递
+					return false
+				})
+				$div.click(function () {
+					alert('我是 div')
+				})
+			})
+		</script>
+		<style type="text/css" media="screen">
+
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li>香蕉</li>
+			<li>栗子</li>
+			<li>美国</li>
+		</ul>
+		<div>
+			<p id="p1">哈哈</p>
+			<input type="button" value="按钮" id="btn1">
+		</div>
+	</body>
+
+</html>

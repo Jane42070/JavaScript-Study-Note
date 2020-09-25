@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Jquery加载</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+			var oDiv = document.getElementById('div1')
+			alert('原生弹出的' + oDiv)
+		}
+
+		// 功能和 window.onload 一样
+		// JQuery 更快
+
+		/*
+		// ready 的完整写法
+		// ready 比 window.onload 快的原因：
+		window.onload 等所有标签加载完，再渲染完后再执行
+		ready 是等标签加载完后就运行
+
+		$(document).ready(function () {
+			var $div = $('#div1')
+
+			alert('JQuery 弹出的' + $div)
+		})
+
+		*/
+
+		// ready 的简写
+		$(function () {
+			var $div = $('#div1')
+
+			alert('JQuery 弹出的' + $div)
+		})
+	</script>
+</head>
+
+<body>
+	<div id="div1">这是一个 div 元素</div>
+</body>
+
+</html>

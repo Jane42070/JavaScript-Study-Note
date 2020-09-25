@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>bind 绑定</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			/*
+			$('#btn').click(function () {
+				alert('点击')
+			})
+			*/
+
+			// 绑定事件的其他方法
+			// 点击或者鼠标移入的时候都执行绑定的匿名函数
+			$('#btn').bind('click mouseover', function () {
+
+				alert('触发事件绑定的函数') // click 事件
+
+				$(this).unbind('mouseover')
+			})
+		})
+	</script>
+	<style type="text/css" media="screen">
+		#btn {
+			width: 60px;
+			height: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<button id="btn">按钮</button>
+</body>
+
+</html>

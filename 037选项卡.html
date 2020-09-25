@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- cSpell:disable -->
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>选项卡</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			var $btn = $('.btns button')
+			var $div = $('.cons div')
+			// alert($btn.length)
+			$btn.click(function () {
+
+				// this 指的是原生的 this, 他表示当前点击的对象
+				// $btn.removeClass('current')
+
+				// 给点击的按钮加上 current, 移除同级元素的 current
+				$(this).addClass('current').siblings().removeClass('current')
+
+				// alert($(this).index())
+				// 取点击的按钮的 index，调用对应的 div 添加 active，移除同级元素的 active
+				$div.eq($(this).index()).addClass('active').siblings().removeClass('active')
+			})
+		})
+	</script>
+	<style type="text/css" media="screen">
+		.btns button {
+			width: 100px;
+			height: 40px;
+			background-color: #ddd;
+			border: 0px;
+			outline: none;
+		}
+
+		.btns .current {
+			background-color: gold;
+		}
+
+		.cons .active {
+			display: block;
+		}
+
+		.cons div {
+			width: 500px;
+			height: 300px;
+			font-size: 20px;
+			line-height: 300px;
+			text-align: center;
+			background-color: gold;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="btns">
+		<button value="01" class="current">01</button>
+		<button value="02">02</button>
+		<button value="03">03</button>
+	</div>
+	<div class="cons">
+		<div class="active">选项卡1的内容</div>
+		<div>选项卡2的内容</div>
+		<div>选项卡3的内容</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>弹框</title>
+	<style type="text/css" media="screen">
+		body {
+			padding: 0;
+			margin: 0;
+		}
+
+		.popWin {
+			display: none;
+		}
+
+		.pop {
+			width: 500px;
+			height: 300px;
+			border-radius: 3px;
+			border: 3px solid #000;
+			box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.4);
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			z-index: 9999;
+			text-align: center;
+			background-color: #fff;
+			margin-left: -250px;
+			margin-top: -150px;
+		}
+
+		.mask {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			z-index: 9998;
+			background-color: #000;
+			opacity: 0.3;
+			filter: alpha(opacity=30);
+		}
+
+		.inPut {
+			outline: none;
+			margin-top: 20px;
+			border-radius: 5px;
+			border: 1px solid #000;
+			width: 100px;
+			height: 20px;
+			box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+			font-size: 17px;
+		}
+
+		.close {
+			font-size: 30px;
+			font-style: normal;
+			color: #000;
+			text-decoration: none;
+		}
+	</style>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			$('.popUp').click(function () {
+				$('.popWin').fadeIn()
+
+				return false
+			})
+
+			$(document).click(function () {
+				$('.popWin').fadeOut()
+			})
+
+			$('.pop').click(function () {
+				return false
+			})
+
+			$('.pop .close').click(function () {
+				$('.popWin').fadeOut()
+			})
+		})
+	</script>
+</head>
+
+<body>
+	<div class="popWin">
+		<div class="pop">
+			弹框文字
+			投资金额： <input type="text" name="" id="inPut" class="inPut" value="">
+			<a class="close" href="#">X</a>
+		</div>
+		<div class="mask"></div>
+	</div>
+	<button class="popUp">弹出</button>
+</body>
+
+</html>

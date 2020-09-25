@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>无缝滚动</title>
+	<script type="text/javascript" id="">
+
+	</script>
+	<style type="text/css" media="screen">
+		ul {
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.box1 li {
+			float: left;
+			width: 100px;
+			transition: all 1s ease;
+		}
+
+		.box1 {
+			width: 800px;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 40px auto 0;
+			overflow: hidden;
+		}
+
+		.box1:hover li {
+			width: 78.75px;
+		}
+
+		.box1 li:hover {
+			width: 350px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box1">
+		<ul>
+			<li><img src="1.jpg" alt="" height="300px"></li>
+			<li><img src="2.jpg" alt="" height="300px"></li>
+			<li><img src="3.jpg" alt="" height="300px"></li>
+			<li><img src="4.jpg" alt="" height="300px"></li>
+			<li><img src="5.jpg" alt="" height="300px"></li>
+			<li><img src="6.jpg" alt="" height="300px"></li>
+			<li><img src="7.jpg" alt="" height="300px"></li>
+			<li><img src="8.jpg" alt="" height="300px"></li>
+		</ul>
+	</div>
+	<div class="box2">
+		<ul>
+			<li><img src="1.jpg" alt=""></li>
+			<li><img src="2.jpg" alt=""></li>
+			<li><img src="3.jpg" alt=""></li>
+			<li><img src="4.jpg" alt=""></li>
+			<li><img src="5.jpg" alt=""></li>
+			<li><img src="6.jpg" alt=""></li>
+			<li><img src="7.jpg" alt=""></li>
+			<li><img src="8.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+
+</html>

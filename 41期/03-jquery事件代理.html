@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>jquery 事件代理</title>
+		<script src="js/jquery-3.5.1.js"></script>
+		<script charset="utf-8">
+			$(function () {
+				var $ul = $('ul')
+				var $div1 = $('#box')
+				$ul.slideDown(1000)
+				// 通过事件代理，让父控件代理子控件的事件，然后执行子控件的相关操作
+				$(this).delegate('li', 'click', function () {
+					$(this).css({'color': 'white'})
+				})
+				$div1.delegate('#p2,#btn2', 'click', function () {
+					alert('ok👌')
+				})
+			})
+		</script>
+		<style type="text/css" media="screen">
+			ul {
+				margin: 50px auto 0;
+				padding: 10px;
+				list-style: none;
+				background: gold;
+				width: 200px;
+				border: 2px solid #000;
+				border-radius: 5px;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<p id="p1">哈哈</p>
+			<input id="btn1" type="text">
+			<ul>
+				<li>这是第1个li 标签</li>
+				<li>这是第2个li 标签</li>
+				<li>这是第3个li 标签</li>
+				<li>这是第4个li 标签</li>
+				<li>这是第5个li 标签</li>
+				<li>这是第6个li 标签</li>
+				<li>这是第7个li 标签</li>
+				<li>这是第8个li 标签</li>
+			</ul>
+		</div>
+
+		<div id="box">
+			<p id="p2">哈哈</p>
+			<input id="btn2" type="text">
+		</div>
+	</body>
+
+</html>

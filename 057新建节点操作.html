@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>节点操作</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			// 通过 html() 的字符串的方式添加节点性能最高
+			/*
+			$('.div1').html($('.div1').html() + '<a href="http://www.baidu.com" target="_blank">Anchor Text</a>')
+
+			$('.div1').html('<p>你好</p>')
+
+			$('.div1').append('<a href="http://www.baidu.com">百度网</a>')
+			*/
+
+			// 新建一个 a 元素，把它赋值给 $a
+			$a = $('<a href="#" target="_blank">Anchor Text</a>')
+
+			$a2 = $('<a href="http://www.url.com" target="_blank">Anchor Text</a>')
+
+			// 父元素内的后面放入子元素
+			$('.div1').append($a)
+
+			// 子元素放入到父元素内部的后面
+			$a2.appendTo($a)
+
+			// 父元素内的前面放入子元素
+			$('.div1').prepend('<a href="http://www.url.com" target="_blank">Prepend</a>')
+
+			// 子元素放入到父元素内部的前面
+			$a2.prependTo($('.div1'))
+
+			// 在现存元素的外部，从后面插入元素
+			$after = $('<a href="http://www.url.com">after</a>')
+			$insertafter = $('<br></br><a href="http://www.url.com">insertafter</a>')
+			$('.div1').after($after)
+			$insertafter.insertAfter($after)
+
+			// .insertBefore() before()
+		})
+	</script>
+</head>
+
+<body>
+	<div class="div1">
+		<h1>这是一个 div 元素</h1>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>字符串操作方法</title>
+	<script type="text/javascript" id="">
+		var iNum01 = 12
+		var sNum02 = '24'
+		var sTr = 'abc'
+
+		alert(iNum01 + sNum02)
+		alert(sNum02 + sTr)
+
+		var sTr02 = '12.35'
+
+		alert(parseFloat(sTr02))
+
+		var sTr03 = '2017-4-20'
+
+		alert(sTr03.split('-')) // 弹出 [2017, 4, 20]
+		alert(sTr03.split('')) // 将每个字符串单独分开 [2, 0, 1, 7, -, 4, -, 2, 0]
+
+		var sTr04 = 'hello, world'
+		alert(sTr04.indexOf('lo'))
+		alert(sTr04.substring(0, 5)) // substring(start, end) 返回切的字符串，不切最后一个字符串
+		alert(sTr04.toUpperCase()) // 转换为大写
+		alert(sTr04.toLowerCase()) // 转换为小写
+
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

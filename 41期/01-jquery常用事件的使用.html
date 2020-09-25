@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>01 jquery常用事件的使用</title>
+		<script src="js/jquery-3.5.1.js"></script>
+		<script charset="utf-8">
+			// 等页面加载完成以后获取标签元素
+			// $(document).ready(function () {
+
+			// })
+			$(function () {
+				// 获取 ul 里面的所有 li 标签
+				var $li = $('ul li')
+				var $btn1 = $('#btn1')
+				var $txt1 = $('#txt1')
+
+				$li.css({'color': 'black'})
+				$li.click(function () {
+					// 获取当前点击的标签对象
+					// 原生 js 的写法
+					// this.style.color = 'red'
+					$(this).css({'color': 'red'})
+					alert($(this).index() + $(this).html())
+				})
+				$btn1.click(function () {
+					sVal = $txt1.val()
+					alert($txt1.val())
+					$txt1.css({'border-color': sVal})
+					$txt1.val('')
+				})
+				// 得到焦点事件
+				$txt1.focus(function () {
+					// 得到焦点的文本框，然后设置样式属性
+					$(this).animate({'width': '200px'}, 200)
+				})
+				// 失去焦点事件
+				$txt1.blur(function () {
+					// 变为白色
+					$(this).animate({'width': '100px'}, 200)
+				})
+				// 鼠标悬停
+				$txt1.mouseover(function () {
+					$(this).css({'background': 'gray'})
+				})
+				// 鼠标移出
+				$txt1.mouseout(function () {
+					$(this).css({'background': 'white'})
+				})
+			})
+		</script>
+		<style type="text/css" media="screen">
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li>苹果</li>
+			<li>香蕉</li>
+			<li>鸭梨</li>
+		</ul>
+		<input type="text" id="txt1" value="">
+		<input type="button" id="btn1" value="确定">
+	</body>
+
+</html>

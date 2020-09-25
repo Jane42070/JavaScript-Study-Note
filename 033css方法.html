@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>CSS方法</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			var $div = $('#box')
+
+			var sTr = $div.css('fontSize')
+
+			alert(sTr)
+
+			// 原生js 无法读取行间没有定义的 css 属性
+			// alert(document.getElementById('box').style.fontSize)
+
+			// 写属性值
+			$div.css({'backgroundColor': 'pink'})
+
+			// 在原来样式名的基础上加上 big 样式名
+			$div.addClass('big')
+
+			$div.addClass('red')
+
+			$div.removeClass('big red')
+		})
+	</script>
+	<style type="text/css" media="screen">
+		.big {
+			font-size: 20px;
+		}
+
+		.red {
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="box" class="box">div 元素</div>
+</body>
+
+</html>

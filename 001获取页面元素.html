@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Document</title>
+	<script type="text/javascript">
+		// 当整个页面加载完之后再执行花括号里面的语句
+		window.onload = function () {
+			// 通过 ID 名获取元素赋值给 oDiv 变量
+			var oDiv = document.getElementById('div1')
+
+			// 改变元素的属性
+			oDiv.style.color = "red";
+			oDiv.style.fontSize = "20px";
+		}
+	</script>
+</head>
+
+<body>
+	<div id="div1">这是一个 div 元素</div>
+</body>
+
+</html>

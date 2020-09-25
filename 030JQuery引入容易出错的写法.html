@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>JQuery引入容易出错的写法</title>
+	<!-- 不能直接在 JQuery 的引入标签里写 js 代码，需要另外写一个 js 标签 -->
+	<script type="text/javascript" src="js/jquery-3.5.1.js">
+		$(function () {
+			var $div = $('#div1')
+			alert($div)
+		})
+	</script>
+</head>
+
+<body>
+	<div id="div1">这是一个 div 元素</div>
+</body>
+
+</html>

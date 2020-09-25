@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>变量作用域</title>
+	<script charset="utf-8">
+		var iNum01 = 12
+
+		function myalert() {
+			// var iNum01 = 10
+			var iNum02 = 22
+			alert('myalert() -> iNum02=' + iNum02 + '\niNum01=' + iNum01)
+		}
+		myalert()
+		alert('iNum01=' + iNum01)
+	</script>
+</head>
+
+<body>
+	body
+</body>
+
+</html>

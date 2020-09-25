@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>加法运算</title>
+	<script type="text/javascript">
+		window.onload = function () {
+			var oBtn = document.getElementById('btn01')
+			var oInput01 = document.getElementById('inp01')
+			var oInput02 = document.getElementById('inp02')
+
+			oBtn.onclick = function () {
+				var iValue01 = parseInt(oInput01.value)
+				var iValue02 = parseInt(oInput02.value)
+
+				alert(iValue01 + iValue02)
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<input type="text" name="" id="inp01" value="">+
+	<input type="text" name="" id="inp02" value="">
+	<input type="button" name="" id="btn01" value="相加">
+
+</body>
+
+</html>

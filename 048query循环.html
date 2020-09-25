@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>JQuery 循环</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			var $li = $('.list li')
+			// $li.css({'background-color': 'gold'})
+			$li.each(function () {
+				console.log($(this).html() + '\nindex:' + $(this).index())
+				$(this).css({'background-color': 'gold'})
+			})
+		})
+	</script>
+</head>
+
+<body>
+	<ul class="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+</body>
+
+</html>

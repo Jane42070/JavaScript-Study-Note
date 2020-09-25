@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>定义 javascript 对象</title>
+		<script src="js/jquery-3.5.1.js"></script>
+		<script charset="utf-8">
+			// 自定义 JavaScript 对象有两种方式
+			// 1. 使用顶级类型 Object 创建自定义对象
+			/*
+			var oPerson = new Object()
+			// 添加属性
+			oPerson.name = '李四'
+			oPerson.age = 20
+			// 通过对象获取属性和调用方法
+			alert(oPerson.name + ' ' + oPerson.age)
+			// 添加方法
+			oPerson.show = function () {
+				alert(oPerson.name + '是一个好人')
+			}
+			oPerson.show()
+			*/
+			// 2. 使用字面量创建自定义的对象
+			// 为 json 数据做铺垫
+			var oStudent = {
+				// 属性
+				name: "王五",
+				age: 20,
+				// 方法
+				show: function () {
+					alert('我是一个好学生')
+				}
+			}
+			// 通过对象获取属性和调用方法
+			alert(oStudent.name + ' ' + oStudent.age)
+			oStudent.show()
+		</script>
+		<style type="text/css" media="screen">
+
+		</style>
+	</head>
+
+	<body>
+
+	</body>
+
+</html>

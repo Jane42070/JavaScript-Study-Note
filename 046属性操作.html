@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>属性操作</title>
+	<style type="text/css" media="screen">
+
+	</style>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			var $html = $('.div1')
+			var $a = $('.link')
+
+			$html.html('<span>加入标签</span>')
+
+			console.log($html.html())
+
+			// 读取 a 标签的 class 属性值，没有就是空的
+			console.log($a.prop('class'))
+
+			console.log($a.prop('title'))
+
+			console.log($('img').prop('src'))
+
+			// 设置属性
+			$a.prop({'href': 'https://baidu.com', 'title': '百度网链接'})
+		})
+	</script>
+</head>
+
+<body>
+	<div class="div1">你好</div>
+	<a class="link" href="#">一个链接</a>
+	<img src="css/skin01.css" alt="">
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>选择集转移</title>
+		<script src="js/jquery-3.5.1.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				// eq(1) 0, 1, 2, 3, 4, 5
+				$('div').eq(1).css({'background-color': 'pink'})
+				$('div').has('p').css({'font-size': '30px'})
+				$('div').filter('.third').css({'background-color': 'gold'})
+				$('div').find('.fifth').css({'background-color': 'red'})
+
+				// 选择 div 的同级元素
+				$('div').siblings().css({'color': 'blue'})
+				$('div').eq(4).prev().css({'font-weight': 'bold', 'textIndent': '40px'})
+			})
+		</script>
+	</head>
+
+	<body>
+		<div>1</div>
+		<div>
+			<p>2</p>
+		</div>
+		<div class="third">3</div>
+		<div>4</div>
+		<div>
+			<div class="fifth">5</div>
+		</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+	</body>
+
+</html>

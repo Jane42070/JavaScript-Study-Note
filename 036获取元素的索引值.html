@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>获取元素的索引值</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			var $li = $('.list li')
+			// alert($li.length) 弹出 8
+			// alert($li.eq(3).index()) 弹出 3
+			alert($li.filter('.myli').index())
+		})
+	</script>
+	<style type="text/css" media="screen">
+
+	</style>
+</head>
+
+<body>
+	<ul class="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li class="myli">5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+</body>
+
+</html>

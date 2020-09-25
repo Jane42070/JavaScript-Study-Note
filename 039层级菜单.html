@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>层级菜单</title>
+	<style type="text/css" media="screen">
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: darkcyan;
+		}
+
+		.menu {
+			width: 600px;
+			height: 100%;
+			position: relative;
+			margin: 50px auto 0;
+		}
+
+		.menu>li {
+			float: left;
+			width: 198px;
+			height: 40px;
+			margin-left: -1px;
+			background-color: gold;
+			border: 1px solid #000;
+			line-height: 40px;
+			text-align: center;
+		}
+
+		.menu li:hover {
+			background-color: #ffe700;
+		}
+
+		.menu li ul {
+			display: none;
+		}
+
+		.menu li .current {
+			display: block;
+		}
+
+		.menu li ul li {
+			width: 198px;
+			height: 40px;
+			margin-left: -1px;
+			margin-bottom: -1px;
+			background-color: gold;
+			border: 1px solid #000;
+			line-height: 40px;
+			text-align: center;
+		}
+	</style>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			$('.level1').click(function () {
+				// 当前点击的元素紧挨的同辈元素向下展开，再跳到元素的父级（li），再选择元素（li）的同级元素，再选择同级元素的子元素（ul），然后将它向上收起
+				// 通过 stop() 可以修正反复点击导致的持续动画的 bug
+				$(this).next().stop().slideToggle().parent().siblings().children('ul').slideUp()
+			})
+		})
+	</script>
+</head>
+
+<body>
+	<ul class="menu">
+		<li>
+			<a class="level1" href="#">英雄联盟</a>
+			<ul>
+				<li><a href="#">狗头</a></li>
+				<li><a href="#">狗熊</a></li>
+				<li><a href="#">狗贼</a></li>
+				<li><a href="#">狗币</a></li>
+			</ul>
+		</li>
+		<li>
+			<a class="level1" href="#">战地</a>
+			<ul>
+				<li><a href="#">喷火兵</a></li>
+				<li><a href="#">战壕奇兵</a></li>
+				<li><a href="#">哨兵</a></li>
+				<li><a href="#">坦克猎手</a></li>
+			</ul>
+		</li>
+		<li>
+			<a class="level1" href="#">瘟疫公司</a>
+			<ul>
+				<li><a href="#">细菌</a></li>
+				<li><a href="#">真菌</a></li>
+				<li><a href="#">蠕虫</a></li>
+				<li><a href="#">病毒</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+
+</html>

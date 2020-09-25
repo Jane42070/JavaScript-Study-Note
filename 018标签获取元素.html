@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>标签获取元素</title>
+	<script type="text/javascript" id="">
+		window.onload = function () {
+			// 通过标签名称获取 li 元素，生成一个选择器，赋值给 aLi
+			var aLi = document.getElementsByTagName('li')
+
+			// 读取选择集内元素的个数
+			// alert(aLi.length)
+
+			// 不能给选择集设置样式属性
+			// aLi.style.backgroundColor = 'gold'
+
+			// 给一个 li 设置背景颜色
+			// aLi[0].style.backgroundColor = 'gold'
+
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].style.backgroundColor = 'gold'
+			}
+
+			var oUl = document.getElementById('list02')
+			var aLi2 = oUl.getElementsByTagName('li')
+			alert(aLi2.length)
+		}
+	</script>
+</head>
+
+<body>
+	<ul class="list01">
+		<li>01</li>
+		<li>02</li>
+		<li>03</li>
+		<li>04</li>
+		<li>05</li>
+	</ul>
+
+	<ul class="list02">
+		<li>01</li>
+		<li>02</li>
+		<li>03</li>
+		<li>04</li>
+		<li>05</li>
+	</ul>
+</body>
+
+</html>

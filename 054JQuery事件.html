@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>JQuery事件</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			// 在获得焦点的时候做什么事情
+			/*
+			$('#input01').focus(function () {
+				alert('获取焦点')
+			})
+			*/
+
+			// focus 一般用来让 input 元素开始就获取焦点，只能是一个元素获取焦点
+			$('#input01').focus()
+
+			// blur 失去焦点
+			$('#input01').blur(function () {
+				// 获取 input 元素的 value 值用 val()
+				var sVal = $(this).val()
+				alert('失去焦点' + sVal)
+			})
+
+			$('#form1').submit(function () {
+				// 阻止表单提交
+				return false
+				alert('提交')
+			})
+		})
+	</script>
+	<style type="text/css" media="screen">
+
+	</style>
+</head>
+
+<body>
+	<form id="form1" action="" method="GET">
+		<input type="text" name="id" id="input01" value="">
+		<input type="text" name="pw" id="input02" value="">
+		<input type="submit" name="" id="sub" value="提交">
+	</form>
+</body>
+
+</html>

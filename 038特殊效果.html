@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>特殊效果</title>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			var iNum = 0
+			$('#btn').click(function () {
+				// $('#btn').fadeIn()
+				// $('#btn').fadeOut()
+
+				/* $('.box').fadeToggle(1000, 'swing', function () {
+					alert('动画完成!')
+				})
+				*/
+
+				// $('.box').show()
+				// $('.box').hide()
+				// $('.box').toggle()
+
+				// $('.box').slideDown()
+				// $('.box').slideUp()
+				$('.box').slideToggle(1000, function () {
+					alert('动画完成!')
+				}).text(iNum)
+
+				iNum += 1
+			})
+		})
+	</script>
+	<style type="text/css" media="screen">
+		.box {
+			width: 300px;
+			height: 300px;
+			background-color: gold;
+			text-align: center;
+			line-height: 300px;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="button" name="" id="btn" value="变换动画">
+	<div id="box" class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>滑动选项卡</title>
+	<style type="text/css" media="screen">
+		button {
+			width: 60px;
+			height: 40px;
+			border: 0;
+			outline: none;
+		}
+
+		.boxs {
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.box {
+			width: 200px;
+			height: 200px;
+			background-color: gold;
+			font-size: 20px;
+			text-align: center;
+			line-height: 200px;
+			float: left;
+		}
+
+		.active {
+			display: block;
+		}
+
+		.current {
+			background-color: gold;
+		}
+
+		.slides {
+			width: 600px;
+			height: 200px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script charset="utf-8">
+		$(function () {
+			var $div = $('.btns button')
+			var $boxs = $('.boxs .slides .box')
+			var $slides = $('.boxs .slides')
+
+			$div.click(function () {
+				$(this).addClass('current').siblings().removeClass('current')
+				// $boxs.eq($(this).index()).addClass('active').siblings().removeClass('active')
+				$slides.stop().animate({'left': -200 * $(this).index()})
+			})
+		})
+	</script>
+</head>
+
+<body>
+	<div class="btns">
+		<button class="current">01</button>
+		<button>02</button>
+		<button>03</button>
+	</div>
+
+	<div class="boxs">
+		<div class="slides">
+			<div class="box active">01</div>
+			<div class="box">02</div>
+			<div class="box">03</div>
+		</div>
+	</div>
+</body>
+
+</html>
