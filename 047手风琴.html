@@ -1,89 +1,89 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>手风琴</title>
-	<script src="js/jquery-3.5.1.js"></script>
-	<script charset="utf-8">
-		$(function () {
-			var $li = $('.africa li')
-			var $img = $('.africa li img')
-			console.log($li)
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>手风琴</title>
+		<script src="js/jquery-3.5.1.js"></script>
+		<script charset="utf-8">
+			$(function () {
+				var $li = $('.africa li')
+				var $img = $('.africa li img')
+				console.log($li)
 
-			$li.click(function () {
-				console.log($(this).index())
-				// {'left': $(this).index() * $li.find('span').width()}
-				$(this).stop().animate({
-					'left': $(this).index() * 20
-				}).prevAll().each(function () {
-					$(this).animate({'left': $(this).index() * 20})
-				})
-				$(this).nextAll().each(function () {
-					$(this).animate({'left': $(this).index() * 20 + $img.width()})
+				$li.click(function () {
+					console.log($(this).index())
+					// {'left': $(this).index() * $li.find('span').width()}
+					$(this).stop().animate({
+						'left': $(this).index() * 20
+					}).prevAll().each(function () {
+						$(this).animate({'left': $(this).index() * 20})
+					})
+					$(this).nextAll().each(function () {
+						$(this).animate({'left': $(this).index() * 20 + $img.width()})
+					})
 				})
 			})
-		})
-	</script>
-	<style type="text/css" media="screen">
-		ul {
-			list-style: none;
-			width: 500px;
-			height: 250px;
-			margin: 100px auto 0;
-			padding: 0;
-			border: 1px solid #000;
-			position: relative;
-			overflow: hidden;
-		}
+		</script>
+		<style type="text/css" media="screen">
+			ul {
+				list-style: none;
+				width: 500px;
+				height: 250px;
+				margin: 100px auto 0;
+				padding: 0;
+				border: 1px solid #000;
+				position: relative;
+				overflow: hidden;
+			}
 
-		.africa li {
-			float: left;
-			width: 420px;
-			height: 250px;
-			position: absolute;
-		}
+			.africa li {
+				float: left;
+				width: 420px;
+				height: 250px;
+				position: absolute;
+			}
 
-		.bar01 {
-			left: 0px;
-		}
+			.bar01 {
+				left: 0px;
+			}
 
-		.bar02 {
-			left: 420px;
-		}
+			.bar02 {
+				left: 420px;
+			}
 
-		.bar03 {
-			left: 440px;
-		}
+			.bar03 {
+				left: 440px;
+			}
 
-		.bar04 {
-			left: 460px;
-		}
+			.bar04 {
+				left: 460px;
+			}
 
-		.bar05 {
-			left: 480px;
-		}
+			.bar05 {
+				left: 480px;
+			}
 
-		span {
-			width: 20px;
-			height: 250px;
-			writing-mode: vertical-lr;
-			line-height: 20px;
-			text-align: center;
-			background-color: gold;
-		}
-	</style>
-</head>
+			span {
+				width: 20px;
+				height: 250px;
+				writing-mode: vertical-lr;
+				line-height: 20px;
+				text-align: center;
+				background-color: gold;
+			}
+		</style>
+	</head>
 
-<body>
-	<ul class="africa">
-		<li class="bar01"><span>非洲风景01</span><img src="animation/1.jpg" width="400px" height="250px"></li>
-		<li class="bar02"><span>非洲风景02</span><img src="animation/2.jpg" width="400px" height="250px"></li>
-		<li class="bar03"><span>非洲风景03</span><img src="animation/3.jpg" width="400px" height="250px"></li>
-		<li class="bar04"><span>非洲风景04</span><img src="animation/4.jpg" width="400px" height="250px"></li>
-		<li class="bar05"><span>非洲风景05</span><img src="animation/5.jpg" width="400px" height="250px"></li>
-	</ul>
-</body>
+	<body>
+		<ul class="africa">
+			<li class="bar01"><span>非洲风景01</span><img src="animation/1.jpg" width="400px" height="250px"></li>
+			<li class="bar02"><span>非洲风景02</span><img src="animation/2.jpg" width="400px" height="250px"></li>
+			<li class="bar03"><span>非洲风景03</span><img src="animation/3.jpg" width="400px" height="250px"></li>
+			<li class="bar04"><span>非洲风景04</span><img src="animation/4.jpg" width="400px" height="250px"></li>
+			<li class="bar05"><span>非洲风景05</span><img src="animation/5.jpg" width="400px" height="250px"></li>
+		</ul>
+	</body>
 
 </html>

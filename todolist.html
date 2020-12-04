@@ -2,147 +2,147 @@
 <!-- cSpell:disable -->
 <html>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>todolist</title>
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>todolist</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js
 "></script>
-	<script charset="utf-8">
-		$(function () {
-			$('h1').fadeIn(500)
+		<script charset="utf-8">
+			$(function () {
+				$('h1').fadeIn(500)
 
-			$('.box').fadeIn(1000)
+				$('.box').fadeIn(1000)
 
-			$('#sub').click(function () {
-				var $text = $('#text')
-				var $li = $('<li></li>')
-				var $span = $('<span id="content"><span>')
-				// javascript:; 的默认行为是执行 javascript 的空语句，也就是什么都不做
-				var $del = $('<a href="javascript:;" id="del">删除</a>')
-				var $pre = $('<a href="javascript:;" id="mPre">↑</a>')
-				var $next = $('<a href="javascript:;" id="mNext">↓</a>')
-				if ($text.val() == '') {
-					alert('不能为空')
-					return false
-				}
+				$('#sub').click(function () {
+					var $text = $('#text')
+					var $li = $('<li></li>')
+					var $span = $('<span id="content"><span>')
+					// javascript:; 的默认行为是执行 javascript 的空语句，也就是什么都不做
+					var $del = $('<a href="javascript:;" id="del">删除</a>')
+					var $pre = $('<a href="javascript:;" id="mPre">↑</a>')
+					var $next = $('<a href="javascript:;" id="mNext">↓</a>')
+					if ($text.val() == '') {
+						alert('不能为空')
+						return false
+					}
 
-				$('.list').append($li)
+					$('.list').append($li)
 
-				$li.append($span.html($text.val()))
-				$span.after($del)
-				$next.insertAfter($pre.insertAfter($del))
+					$li.append($span.html($text.val()))
+					$span.after($del)
+					$next.insertAfter($pre.insertAfter($del))
+				})
+
+				$('.list').delegate('#del', 'click', function () {
+					// alert('remove')
+					$(this).parent().remove()
+				})
+
+				$('.list').delegate('#mPre', 'click', function () {
+					if ($(this).parent().prev().length == 0) {
+						alert('到顶了')
+					}
+					$(this).parent().insertBefore($(this).parent().prev())
+				})
+
+				$('.list').delegate('#mNext', 'click', function () {
+					if ($(this).parent().next().length == 0) {
+						alert('到底了')
+					}
+					$(this).parent().next().after($(this).parent())
+				})
 			})
+		</script>
+		<style type="text/css" media="screen">
+			h1 {
+				width: 160px;
+				margin: 20px auto 0;
+				display: none;
+			}
 
-			$('.list').delegate('#del', 'click', function () {
-				// alert('remove')
-				$(this).parent().remove()
-			})
+			.box .list {
+				width: 400px;
+				height: 400px;
+				list-style: none;
+				margin: 20px auto 0;
+				padding: 0;
+			}
 
-			$('.list').delegate('#mPre', 'click', function () {
-				if ($(this).parent().prev().length == 0) {
-					alert('到顶了')
-				}
-				$(this).parent().insertBefore($(this).parent().prev())
-			})
+			.list li {
+				width: 398px;
+				height: 30px;
+				line-height: 30px;
+				border-bottom: 1px solid gray;
+				text-align: center;
+				position: relative;
+			}
 
-			$('.list').delegate('#mNext', 'click', function () {
-				if ($(this).parent().next().length == 0) {
-					alert('到底了')
-				}
-				$(this).parent().next().after($(this).parent())
-			})
-		})
-	</script>
-	<style type="text/css" media="screen">
-		h1 {
-			width: 160px;
-			margin: 20px auto 0;
-			display: none;
-		}
+			.box .form01 {
+				width: 400px;
+				height: 50px;
+				margin: 30px 160px 0;
+			}
 
-		.box .list {
-			width: 400px;
-			height: 400px;
-			list-style: none;
-			margin: 20px auto 0;
-			padding: 0;
-		}
+			#text {
+				width: 200px;
+				height: 20px;
+				outline: none;
+				margin: 0 auto 0;
+				font-size: 15px;
+				transition: all 200ms ease;
+			}
 
-		.list li {
-			width: 398px;
-			height: 30px;
-			line-height: 30px;
-			border-bottom: 1px solid gray;
-			text-align: center;
-			position: relative;
-		}
+			#text:hover {
+				box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+			}
 
-		.box .form01 {
-			width: 400px;
-			height: 50px;
-			margin: 30px 160px 0;
-		}
+			#sub {
+				width: 60px;
+				outline: none;
+				transition: all 200ms ease;
+			}
 
-		#text {
-			width: 200px;
-			height: 20px;
-			outline: none;
-			margin: 0 auto 0;
-			font-size: 15px;
-			transition: all 200ms ease;
-		}
+			#sub:hover {
+				box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
+			}
 
-		#text:hover {
-			box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
-		}
+			a {
+				text-decoration: none;
+				font-style: normal;
+				margin-left: 10px;
+				float: right;
+			}
 
-		#sub {
-			width: 60px;
-			outline: none;
-			transition: all 200ms ease;
-		}
+			.box {
+				width: 600px;
+				height: 500px;
+				background-color: #f0f0f0;
+				border-radius: 7px;
+				margin: 30px auto 0;
+				border: 1px solid #f0f0f0;
+				box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
+				display: none;
+			}
 
-		#sub:hover {
-			box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
-		}
+			span {
+				font-style: normal;
+				font-weight: normal;
+				float: left;
+			}
+		</style>
+	</head>
 
-		a {
-			text-decoration: none;
-			font-style: normal;
-			margin-left: 10px;
-			float: right;
-		}
-
-		.box {
-			width: 600px;
-			height: 500px;
-			background-color: #f0f0f0;
-			border-radius: 7px;
-			margin: 30px auto 0;
-			border: 1px solid #f0f0f0;
-			box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
-			display: none;
-		}
-
-		span {
-			font-style: normal;
-			font-weight: normal;
-			float: left;
-		}
-	</style>
-</head>
-
-<body>
-	<h1>TODO List</h1>
-	<div class="box">
-		<div class="form01">
-			<input type="text" name="text" id="text" value="">
-			<input type="button" name="sub" id="sub" value="增加">
+	<body>
+		<h1>TODO List</h1>
+		<div class="box">
+			<div class="form01">
+				<input type="text" name="text" id="text" value="">
+				<input type="button" name="sub" id="sub" value="增加">
+			</div>
+			<ul class="list">
+			</ul>
 		</div>
-		<ul class="list">
-		</ul>
-	</div>
-</body>
+	</body>
 
 </html>
